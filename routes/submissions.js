@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const pollQueries = require('../db/polls');
+const pollQueries = require('../db/queries/polls');
 
 router.get("/:id", (req, res) => {
   const pollId = req.params.id;
