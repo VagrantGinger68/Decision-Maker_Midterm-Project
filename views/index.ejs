@@ -19,6 +19,17 @@
 </head>
 <body>
   <%- include('partials/_header') %>
+  <div>
+    <button>Submit a poll</button>
+    <form action="/poll" method="POST">
+      <input type="email" placeholder="Email" name="email" required>
+      <input type="text" placeholder="Poll Title" required>
+      <input type="text" placeholder="Question Title" required>
+      <input type="text" placeholder="Option 1" required>
+      <input type="text" placeholder="Description (optional)">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 
 </html>

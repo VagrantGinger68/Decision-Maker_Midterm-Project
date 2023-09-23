@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>View Results: <%= title %></title>
+    <title>Poll Submitted!</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/results.css" />
     <link rel="stylesheet" href="/styles/header.css" />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
@@ -18,13 +17,7 @@
   </head>
 
   <body>
-    <%- include('partials/_header') %>
-    <h1><%= title %></h1>
-    <h2><%= question %></h2>
-    <ol>
-      <% for (const choice of choices){ %>
-      <li><%= choice %></li>
-      <% } %>
-    </ol>
+    <img src="/images/Decision-Maker-Logo.png" alt="Decision-Maker-Logo">
+    <h1>Result and Poll link have been emailed to <%= email %></h1>
   </body>
 </html>
