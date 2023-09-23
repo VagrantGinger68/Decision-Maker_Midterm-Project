@@ -17,10 +17,10 @@ router.post("/", (req, res) => {
   const emailInfo = {
     from: "Decision Maker <postmaster@sandboxc01919f6d65b40f7bba14ed0dc9d97bd.mailgun.org>",
     to: email,
-    subject: "Hello",
+    subject: "Here's your Poll!",
     html: `<h1 style='display:flex; align-items:center;'><img style='height:100px;' src='http://localhost:8080/images/Decision-Maker-Logo.png'> Decision Maker</h1>
     <h3>Poll Results: "random url here"</h3>
-    <h3>Share Poll "random url here"</h3>
+    <h3>Share Poll: "random url here"</h3>
     `
   };
   mailgun().messages().send(emailInfo);
