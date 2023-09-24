@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/home.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
 
@@ -19,9 +19,9 @@
 </head>
 <body>
   <%- include('partials/_header') %>
+  <button>Submit a poll</button>
   <div>
-    <button>Submit a poll</button>
-    <form action="/poll" method="POST">
+    <form action="/poll" method="POST" class="">
       <input type="email" placeholder="Email" name="email" required>
       <input type="text" placeholder="Poll Title" required>
       <input type="text" placeholder="Question Title" required>
