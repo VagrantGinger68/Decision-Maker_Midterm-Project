@@ -8,6 +8,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/home.css" />
@@ -19,17 +22,18 @@
 </head>
 <body>
   <%- include('partials/_header') %>
-  <button>Submit a poll</button>
-  <div>
-    <form action="/poll" method="POST" class="">
+  <button id="submit-poll-btn">Submit a poll</button>
+  <section id="create-poll">
+    <form action="/poll" method="POST">
       <input type="email" placeholder="Email" name="email" required>
       <input type="text" placeholder="Poll Title" required>
       <input type="text" placeholder="Question Title" required>
       <input type="text" placeholder="Option 1" required>
       <input type="text" placeholder="Description (optional)">
+      <button class="add-option-btn" >Add Option</button>
       <button type="submit">Submit</button>
     </form>
-  </div>
+  </section>
 </body>
 
 </html>
