@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 50vh;
+  width: 50vw;
+}
+
+input {
+  border-radius: 10px;
+  height: 3em;
+}
+
+#submit-poll-btn {
+  border-radius: 10px;
+  font-size: 2em;
+  padding: 1em 4em;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ffb600;
+
+  &:hover {
+    background-color: #d89b01;
+  }
+
+  &:active {
+    background-color: #b07f03;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+
+  input {
+    flex-grow: 1;
+  }
+
+  i {
+    margin: 0 1em;
+    font-size: 2em;
+  }
+}
