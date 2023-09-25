@@ -29,6 +29,7 @@
       <% for (let i = 0; i < choices.length; i++) { %>
           <label><%= choices[i] %></label>
           <select name="ranking<%= i + 1 %>" required>
+            <option disabled selected value> -- select rank -- </option>
             <% for (let rank = 1; rank <= choices.length; rank++) { %>
                 <option value="<%= rank %>"><%= rank %></option>
             <% } %>
