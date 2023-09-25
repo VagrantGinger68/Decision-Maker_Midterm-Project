@@ -1,3 +1,5 @@
+const pollQueries = require('../../db/queries/polls');
+
 //Generate a random 6 digit string
 const generateRandomString = function() {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -23,4 +25,10 @@ const getChoices = function(body) {
   return choices;
 };
 
-module.exports = { generateRandomString, getChoices };
+const insertAllChoices = function(choices, pollId) {
+  for (let choice of choices) {
+    pollQueries.insertChoices([choice, pollId]);
+  }
+};
+
+module.exports = { generateRandomString, getChoices, insertAllChoices };
