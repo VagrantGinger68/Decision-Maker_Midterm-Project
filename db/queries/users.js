@@ -11,4 +11,15 @@ const createUser = (email) => {
   });
 };
 
-module.exports = { createUser };
+const getUserEmailByPollId = (pollId) => {
+  return db
+  .query(`
+  SELECT email FROM users
+  JOIN polls ON users.id = user_id
+  WHERE polls.id = $1;`, [pollId])
+  .then(data => {
+    return data.rows[0];
+  })
+}
+
+module.exports = { createUser, getUserEmailByPollId };
