@@ -8,4 +8,14 @@ $(document).ready(function() {
       $("#email").focus();
     });
   });
+
+  $("#add-option-btn").click(function() {
+    const newInputField = $("<input>").attr({
+      type: "text",
+      name: `option-${$("input[name^='option']").length + 1}`,
+      placeholder: `Option ${$("input[name^='option']").length + 1}`
+    });
+
+    $(".option").append(newInputField);
+  });
 });
