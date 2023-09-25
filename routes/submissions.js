@@ -15,7 +15,7 @@ router.get("/:id", (req, res) => {
         title: poll.title,
         question: poll.question,
         choices: choices
-      }
+      };
       //console.log(templateVars[choices]);
       return res.render("submission", templateVars);
     });
