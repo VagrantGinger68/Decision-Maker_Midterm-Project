@@ -5,8 +5,8 @@ const getPollById = (id) => {
   .query(
     `SELECT polls.id AS poll_id, polls.title AS poll_title, polls.question AS poll_question, choices.id AS choice_id, choices.title AS choice_title, choices.description AS choice_description
     FROM polls
-    JOIN choices ON polls.id = choices.poll_id; 
-    WHERE id = $1;`, [id])
+    JOIN choices ON polls.id = choices.poll_id
+    WHERE polls.id = $1;`, [id])
   .then(data => {
     return data.rows[0];
   });
