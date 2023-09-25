@@ -18,7 +18,7 @@ const getUserEmailByPollId = (pollId) => {
   JOIN polls ON users.id = user_id
   WHERE polls.id = $1;`, [pollId])
   .then(data => {
-    return data.rows[0];
+    return data.rows[0].email;
   })
 }
 
