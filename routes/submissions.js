@@ -27,7 +27,7 @@ router.post("/:id", (req, res) => {
   pollQueries.insertPoll(pollId)
     .then((poll) => {
       const templateVars = poll;
-      return res.render("submissionComplete", templateVars); // temporary page name until decision on what happens upon submission is made
+      return res.render("answer_submitted", templateVars); // temporary page name until decision on what happens upon submission is made
     });
 });
 
