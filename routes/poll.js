@@ -12,6 +12,9 @@ const mailgun = () => mg({
 
 router.post("/", (req, res) => {
   const email = req.body.email;
+  const pollTitle = req.body.pollTitle;
+  const questionTitle = req.body.questionTitle;
+
   const templateVars = {email : email};
 
   const emailInfo = {
