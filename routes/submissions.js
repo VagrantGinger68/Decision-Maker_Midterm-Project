@@ -5,21 +5,20 @@ const pollQueries = require('../db/queries/polls');
 router.get("/:id", (req, res) => {
   const pollId = req.params.id;
 
+  const pollsPromise = pollQueries.getPollById(pollId);
+  const choicesPromise = pollQueries.getChoicesByPoll(pollId);
+
   // using database
-  pollQueries.getPollById(pollId)
-    .then((poll) => {
-      console.log(poll);
-      const templateVars = poll;
+  Promise.all([pollsPromise, choicesPromise])
+    .then(([poll, choices]) => {
+      const templateVars = {
+        title: poll.title,
+        question: poll.question,
+        choices: choices
+      }
+      //console.log(templateVars[choices]);
       return res.render("submission", templateVars);
     });
-
-  // temporary data for testing
-  // const templateVars = {
-  //   title: "Poll Title",
-  //   question: "Question",
-  //   choices: ["option 1", "option 2", "option 3", "option 4", "option 5"]
-  // };
-  //return res.render("submission", templateVars);
 });
 
 router.post("/:id", (req, res) => {

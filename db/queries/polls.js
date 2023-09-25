@@ -3,12 +3,24 @@ const db = require('../connection');
 const getPollById = (id) => {
   return db
   .query(
-    `SELECT polls.id AS poll_id, polls.title AS poll_title, polls.question AS poll_question, choices.id AS choice_id, choices.title AS choice_title, choices.description AS choice_description
+    `SELECT *
     FROM polls
-    JOIN choices ON polls.id = choices.poll_id
-    WHERE polls.id = $1;`, [id])
+    WHERE id = $1;`, [id])
   .then(data => {
     return data.rows[0];
+  });
+};
+
+const getChoicesByPoll = (pollId) => {
+  return db
+  .query(
+    `SELECT title, description
+    FROM choices
+    WHERE poll_id = $1;`, [pollId]
+  )
+  .then(data => {
+    const choices = data.rows;
+    return choices;
   });
 };
 
@@ -40,4 +52,4 @@ const insertChoices = (data) => {
     });
 };
 
-module.exports = {getPollById, insertPoll, insertChoices};
+module.exports = {getPollById, insertPoll, insertChoices, getChoicesByPoll};
