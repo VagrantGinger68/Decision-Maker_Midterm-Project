@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mg = require('mailgun-js');
 const dotenv = require('dotenv');
+const { generateRandomString, getChoices } = require('../public/scripts/helpers.js');
 
 dotenv.config();
 
@@ -12,6 +13,11 @@ const mailgun = () => mg({
 
 router.post("/", (req, res) => {
   const email = req.body.email;
+  const pollId = generateRandomString();
+  const pollTitle = req.body.pollTitle;
+  const questionTitle = req.body.questionTitle;
+  const choices = getChoices(req.body);
+
   const templateVars = {email : email};
 
   const emailInfo = {
@@ -20,8 +26,8 @@ router.post("/", (req, res) => {
     subject: "Here's your Poll!",
     html: `<div style='height: 100vh; background-color: #fcf4de; display: flex; flex-direction: column; align-items:center;'><img style='height: 400px' src='https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/public/images/decision-maker-logo.png?raw=true'>
     <h1>Here are the links for your poll!</h1>
-    <h2>Poll Results: "random url here"</h2>
-    <h2>Share Poll: "random url here"</h2>
+    <h2>Poll Results: <a href="http:localhost:8080/results/${pollId}">http:localhost:8080/results/${pollId}</a></h2>
+    <h2>Share Poll: <a href="http:localhost:8080/submissions/${pollId}">http:localhost:8080/submissions/${pollId}</a></h2>
     </div>
     `
   };

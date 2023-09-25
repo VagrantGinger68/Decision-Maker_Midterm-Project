@@ -11,4 +11,16 @@ const generateRandomString = function() {
   return randomString;
 };
 
-module.exports = { generateRandomString };
+const getChoices = function(body) {
+  const choices = [];
+
+  for (let key in body) {
+    if (key.startsWith('option')) {
+      choices.push(body[key]);
+    }
+  }
+
+  return choices;
+};
+
+module.exports = { generateRandomString, getChoices };

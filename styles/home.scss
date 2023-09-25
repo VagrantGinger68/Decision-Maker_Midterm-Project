@@ -38,14 +38,13 @@ input {
 
 .option {
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   input {
-    flex-grow: 1;
+    width: 100%;
+    margin-bottom: 1em;
   }
 
-  i {
-    margin: 0 1em;
-    font-size: 2em;
-  }
+
 }
