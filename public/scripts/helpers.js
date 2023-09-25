@@ -10,3 +10,5 @@ const generateRandomString = function() {
 
   return randomString;
 };
+
+module.exports = { generateRandomString };
