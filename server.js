@@ -34,6 +34,7 @@ const usersRoutes = require("./routes/users");
 const submissionsRoutes = require("./routes/submissions");
 const resultsRoutes = require("./routes/results");
 const pollRoutes = require("./routes/poll");
+const notFoundRoutes = require("./routes/notFound");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,6 +45,8 @@ app.use("/users", usersRoutes);
 app.use("/submissions", submissionsRoutes);
 app.use("/results", resultsRoutes);
 app.use("/poll", pollRoutes);
+app.use("/notFound", notFoundRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -52,6 +55,10 @@ app.use("/poll", pollRoutes);
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("*", (req, res) => {
+  res.render("not_found");
 });
 
 app.listen(PORT, () => {
