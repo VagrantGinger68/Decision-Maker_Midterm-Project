@@ -9,7 +9,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 50vw;
+  min-width: 40vw;
   margin-bottom: 200px;
 }
 
@@ -17,7 +17,7 @@ input {
   margin: 1.5em 0;
   border-radius: 10px;
   height: 3em;
-  padding: 1em;
+  padding: 2em 1em;
 }
 
 #submit-poll-btn {
@@ -77,6 +77,10 @@ input {
   }
 }
 
+.send-poll-div {
+  display: flex;
+  justify-content: center;
+}
 
 #send-poll-btn {
   border-radius: 2.5em;
@@ -84,7 +88,7 @@ input {
   background-color: #ffb600;
   font-weight: bold;
   font-size: 2em;
-  padding: 0.5em 0;
+  padding: 0.5em 1em;
 
   &:hover {
     background-color: #d89b01;
