@@ -46,4 +46,49 @@ input {
   }
 }
 
+.button-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
 
+  button {
+    border-radius: 10px;
+    padding: 1em;
+    cursor: pointer;
+    color: white;
+  }
+
+  #remove-option-btn {
+    background-color: rgb(187, 0, 0);
+
+    &:hover {
+      background-color: rgb(144, 0, 0);
+    }
+  }
+
+  #add-option-btn {
+    background-color: #0f3db3;
+
+    &:hover {
+      background-color: #0c2e85;
+    }
+  }
+}
+
+
+#send-poll-btn {
+  border-radius: 2.5em;
+  cursor: pointer;
+  background-color: #ffb600;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 0.5em 0;
+
+  &:hover {
+    background-color: #d89b01;
+  }
+
+  &:active {
+    background-color: #b07f03;
+  }
+}
