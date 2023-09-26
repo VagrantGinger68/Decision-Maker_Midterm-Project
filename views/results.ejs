@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
@@ -21,14 +24,18 @@
 
   <body>
     <%- include('partials/_header') %>
-    <main>
+    <main class="results">
       <h1><%= title %></h1>
       <h2><%= question %></h2>
+      <% if (choices.length > 0) {%>
       <ol>
         <% for (const choice of choices){ %>
-          <li><%= choice %></li>
-          <% } %>
-        </ol>
-      </main>
+        <li><%= choice %></li>
+        <% } %>
+      </ol>
+      <% } else { %>
+      <p>No one has voted yet.</p>
+      <% }%>
+    </main>
   </body>
 </html>
