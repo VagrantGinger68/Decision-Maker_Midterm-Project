@@ -15,9 +15,7 @@ router.get("/:id", (req, res) => {
     ([poll, choices, results]) => {
       if (!poll) return res.redirect("/notFound");
 
-      const rankedChoices = results
-        ? rankChoices(choices, results).map((choice) => choice.title)
-        : [];
+      const rankedChoices = results ? rankChoices(choices, results) : [];
       const templateVars = {
         title: poll.title,
         question: poll.question,

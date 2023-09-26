@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/results.css" />
     <link rel="stylesheet" href="/styles/header.css" />
-
-    <script src="/vendor/jquery-3.0.0.js"></script>
-    <script defer src="/scripts/app.js"></script>
   </head>
 
   <body>
@@ -27,13 +24,19 @@
     <main class="results">
       <h1><%= title %></h1>
       <h2><%= question %></h2>
+      <!-- display ranking when there is a least 1 submission  -->
       <% if (choices.length > 0) {%>
       <ol>
         <% for (const choice of choices){ %>
-        <li><%= choice %></li>
-        <% } %>
+        <!-- when there is a description for the choice, make it as the title attr -->
+        <% if(choice.description) { %>
+        <li title="<%= choice.description %>" %>><%= choice.title %></li>
+        <% }else{ %>
+        <li><%= choice.title %></li>
+        <% }} %>
       </ol>
       <% } else { %>
+      <!-- when there is no submission for the poll  -->
       <p>No one has voted yet.</p>
       <% }%>
     </main>
