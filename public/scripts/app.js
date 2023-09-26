@@ -13,9 +13,16 @@ $(document).ready(function() {
     const newInputField = $("<input>").attr({
       type: "text",
       name: `option-${$("input[name^='option']").length + 1}`,
-      placeholder: `Option ${$("input[name^='option']").length + 1}`
+      placeholder: `Option ${$("input[name^='option']").length + 1}`,
+      required: true
     });
 
     $(".option").append(newInputField);
   });
-});
+
+  $("#remove-option-btn").click(function() {
+    const options = $("input[name^='option']");
+    if (options.length > 1) {
+      options.last().remove();
+    }
+  });
