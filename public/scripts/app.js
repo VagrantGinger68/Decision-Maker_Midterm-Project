@@ -24,6 +24,8 @@ $(document).ready(function() {
     const options = $("input[name^='option']");
     if (options.length > 1) {
       options.last().remove();
+    } else if (options.length === 1) {
+      alert("At least 1 option is required!");
     }
   });
 
