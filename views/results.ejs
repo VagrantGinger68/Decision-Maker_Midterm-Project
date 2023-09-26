@@ -21,12 +21,14 @@
 
   <body>
     <%- include('partials/_header') %>
-    <h1><%= title %></h1>
-    <h2><%= question %></h2>
-    <ol>
-      <% for (const choice of choices){ %>
-      <li><%= choice %></li>
-      <% } %>
-    </ol>
+    <main>
+      <h1><%= title %></h1>
+      <h2><%= question %></h2>
+      <ol>
+        <% for (const choice of choices){ %>
+          <li><%= choice %></li>
+          <% } %>
+        </ol>
+      </main>
   </body>
 </html>
