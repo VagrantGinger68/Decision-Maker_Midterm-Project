@@ -24,6 +24,7 @@ $(document).ready(function() {
     const options = $("input[name^='option']");
     if (options.length > 1) {
       options.last().remove();
+    }
   // disallow same rank for choices
   const selectedOptions = {};
 
@@ -38,4 +39,5 @@ $(document).ready(function() {
       selectedOptions[this.name] = selectedValue;
     }
   });
+})
 });
