@@ -23,17 +23,16 @@
     <h1><%= title %></h1>
     <h2><%= question %></h2>
     <form action="/submissions/<%=poll_id%>" method="POST">
-      <label for="name">Name:</label>
       <input type="text" id="name" name="submitter" placeholder="Enter name (optional)"/>
 
       <% for (let i = 0; i < choices.length; i++) { %>
-          <label><%= choices[i].title %></label>
-          <select name="option<%= i + 1 %>" required>
-            <option disabled selected value> -- select rank -- </option>
-            <% for (let rank = 1; rank <= choices.length; rank++) { %>
-                <option value="<%= rank %>"><%= rank %></option>
-            <% } %>
-          </select>
+        <label><%= choices[i].title %></label>
+        <select name="option<%= i + 1 %>" name="option<%= i + 1 %>"required>
+          <option disabled selected value> -- select rank -- </option>
+          <% for (let rank = 1; rank <= choices.length; rank++) { %>
+            <option value="<%= rank %>"><%= rank %></option>
+          <% } %>
+        </select>
       <% } %>
 
       <button type="submit" class="submit-answer-btn">Submit</button>

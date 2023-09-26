@@ -2,44 +2,53 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 50vh;
-  width: 50vw;
+  align-items: center;
+  min-width: 40vw;
+  margin-bottom: 200px;
 }
 
-input {
+label {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+.name-label {
+  font-size: 1.5em;
+}
+
+input[type="text"],
+select {
+  margin: 0.5em 0;
   border-radius: 10px;
   height: 3em;
+  padding-left: 1em;
+  width: 100%;
 }
-
-select {
-  border-radius: 10px; 
-  font-weight: bold;
-  cursor: pointer; 
-  background-color: #ffb600; 
-  color: #FFFFFF;
-  padding: 0.5em 1em;
-  text-align: center;
-}
-
-select:hover {
-  background-color: #d89b01;
-}
-
-.submit-answer-btn {
+button.submit-answer-btn {
   border-radius: 10px;
-  font-size: 1.5em;
-  margin-bottom: 25px;
-  margin-top: 15px;
-  font-weight: bold;
+  padding: 1em 2em;
   cursor: pointer;
   background-color: #ffb600;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white;
+  margin: 2em;
 
   &:hover {
     background-color: #d89b01;
