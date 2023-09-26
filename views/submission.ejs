@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>View Results: <%= title %></title>
+    <title>Answer Poll: <%= title %></title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" />
     <link rel="stylesheet" href="/styles/layout.css" />
     <link rel="stylesheet" href="/styles/submission.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
@@ -23,20 +24,19 @@
     <h1><%= title %></h1>
     <h2><%= question %></h2>
     <form action="/submissions/<%=poll_id%>" method="POST">
-      <label for="name">Name:</label>
       <input type="text" id="name" name="submitter" placeholder="Enter name (optional)"/>
 
       <% for (let i = 0; i < choices.length; i++) { %>
-          <label><%= choices[i].title %></label>
-          <select name="option<%= i + 1 %>" required>
-            <option disabled selected value> -- select rank -- </option>
-            <% for (let rank = 1; rank <= choices.length; rank++) { %>
-                <option value="<%= rank %>"><%= rank %></option>
-            <% } %>
+        <label><%= choices[i].title %></label>
+        <select name="option<%= i + 1 %>" name="option<%= i + 1 %>"required>
+          <option disabled selected value> -- select rank -- </option>
+          <% for (let rank = 1; rank <= choices.length; rank++) { %>
+            <option value="<%= rank %>"><%= rank %></option>
+          <% } %>
         </select>
       <% } %>
 
-      <input type="submit" value="Submit">
+      <button type="submit" class="submit-answer-btn">Submit</button>
   </form>
   </body>
 </html>
