@@ -5,7 +5,7 @@ const { getPollById, getChoicesByPoll } = require("../db/queries/polls");
 const { generateResults, rankChoices } = require("../public/scripts/helpers");
 
 router.get("/:id", (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params.id;
 
   // get results from database
   const pollsPromise = getPollById(id);
@@ -13,6 +13,7 @@ router.get("/:id", (req, res) => {
   const resultsPromise = getResultsById(id).then(generateResults);
   Promise.all([pollsPromise, choicesPromise, resultsPromise]).then(
     ([poll, choices, results]) => {
+      if (!poll) return res.redirect("/notFound");
       const templateVars = {
         title: poll.title,
         question: poll.question,
