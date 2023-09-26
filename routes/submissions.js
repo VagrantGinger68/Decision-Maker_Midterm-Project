@@ -23,6 +23,8 @@ router.get("/:id", (req, res) => {
   // using database
   Promise.all([pollsPromise, choicesPromise])
     .then(([poll, choices]) => {
+      if (!poll) return res.redirect("/notFound");
+      
       const templateVars = {
         poll_id: poll.id,
         title: poll.title,

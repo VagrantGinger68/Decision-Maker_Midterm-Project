@@ -2,7 +2,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 }
 
@@ -10,16 +9,19 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 50vh;
-  width: 50vw;
+  min-width: 40vw;
+  margin-bottom: 200px;
 }
 
 input {
+  margin: 1.5em 0;
   border-radius: 10px;
   height: 3em;
+  padding: 2em 1em;
 }
 
 #submit-poll-btn {
+  margin-top: 350px;
   border-radius: 10px;
   font-size: 2em;
   padding: 1em 4em;
@@ -43,8 +45,56 @@ input {
 
   input {
     width: 100%;
-    margin-bottom: 1em;
+  }
+}
+
+.button-div {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+
+  button {
+    border-radius: 10px;
+    padding: 1em;
+    cursor: pointer;
+    color: white;
   }
 
+  #remove-option-btn {
+    background-color: rgb(187, 0, 0);
 
+    &:hover {
+      background-color: rgb(144, 0, 0);
+    }
+  }
+
+  #add-option-btn {
+    background-color: #0f3db3;
+
+    &:hover {
+      background-color: #0c2e85;
+    }
+  }
+}
+
+.send-poll-div {
+  display: flex;
+  justify-content: center;
+}
+
+#send-poll-btn {
+  border-radius: 2.5em;
+  cursor: pointer;
+  background-color: #ffb600;
+  font-weight: bold;
+  font-size: 2em;
+  padding: 0.5em 1em;
+
+  &:hover {
+    background-color: #d89b01;
+  }
+
+  &:active {
+    background-color: #b07f03;
+  }
 }
