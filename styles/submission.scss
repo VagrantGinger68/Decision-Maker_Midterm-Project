@@ -7,7 +7,7 @@ body {
 
 h1 {
   font-size: 2em;
-  margin: 1em 0;
+  margin-top: 300px;
 }
 
 h2 {
@@ -28,11 +28,7 @@ label {
   margin: 1em 0;
 }
 
-.name-label {
-  font-size: 1.5em;
-}
-
-input[type="text"],
+input[type="text"], 
 select {
   margin: 0.5em 0;
   border-radius: 10px;
@@ -41,7 +37,7 @@ select {
   width: 100%;
 }
 button.submit-answer-btn {
-  border-radius: 10px;
+  border-radius: 2.5em;
   padding: 1em 2em;
   cursor: pointer;
   background-color: #ffb600;
