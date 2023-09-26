@@ -24,6 +24,18 @@ $(document).ready(function() {
     const options = $("input[name^='option']");
     if (options.length > 1) {
       options.last().remove();
+  // disallow same rank for choices
+  const selectedOptions = {};
+
+  $("select").change(function() {
+    const selectedValue = $(this).val();
+
+    if (Object.values(selectedOptions).includes(selectedValue)) {
+      alert("You cannot select the same rank for multiple options!");
+
+      $(this).val("");
+    } else {
+      selectedOptions[this.name] = selectedValue;
     }
   });
 });
