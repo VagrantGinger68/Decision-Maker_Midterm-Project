@@ -25,19 +25,20 @@ $(document).ready(function() {
     if (options.length > 1) {
       options.last().remove();
     }
-    // disallow same rank for choices
-    const selectedOptions = {};
+  });
 
-    $("select").change(function() {
-      const selectedValue = $(this).val();
+  // disallow same rank for choices
+  const selectedOptions = {};
 
-      if (Object.values(selectedOptions).includes(selectedValue)) {
-        alert("You cannot select the same rank for multiple options!");
+  $("select").change(function() {
+    const selectedValue = $(this).val();
 
-        $(this).val("");
-      } else {
-        selectedOptions[this.name] = selectedValue;
-      }
-    });
+    if (Object.values(selectedOptions).includes(selectedValue)) {
+      alert("You cannot select the same rank for multiple options!");
+
+      $(this).val("");
+    } else {
+      selectedOptions[this.name] = selectedValue;
+    }
   });
 });
