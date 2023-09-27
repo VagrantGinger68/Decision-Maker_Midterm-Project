@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
       return mailgun().messages().send(emailInfo);
     })
     .then(() => {
-      const templateVars = {email};
+      const templateVars = {email, pollId};
       res.render("poll_submitted", templateVars);
     });
 });
