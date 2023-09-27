@@ -34,8 +34,8 @@ router.post("/", (req, res) => {
         subject: "Here's your Poll!",
         html: `<div style='height: 100vh; background-color: #fcf4de; display: flex; flex-direction: column; align-items:center;'><img style='height: 400px' src='https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/public/images/decision-maker-logo.png?raw=true'>
         <h1>Here are the links for your poll!</h1>
-        <h2>Poll Results: <a href="http://localhost:8080/results/${pollId}">http:localhost:8080/results/${pollId}</a></h2>
-        <h2>Share Poll: <a href="http://localhost:8080/submissions/${pollId}">http:localhost:8080/submissions/${pollId}</a></h2>
+        <h2>Poll Results: <a href="http://localhost:8080/results/${pollId}">http://localhost:8080/results/${pollId}</a></h2>
+        <h2>Share Poll: <a href="http://localhost:8080/submissions/${pollId}">http://localhost:8080/submissions/${pollId}</a></h2>
         </div>
         `
       };
