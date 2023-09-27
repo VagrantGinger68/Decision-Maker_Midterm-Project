@@ -21,10 +21,10 @@ $(document).ready(function () {
 
   $("#remove-option-btn").click(function () {
     const options = $("input[name^='option']");
-    if (options.length > 1) {
+    if (options.length > 2) {
       options.last().remove();
-    } else if (options.length === 1) {
-      alert("At least 1 option is required!");
+    } else if (options.length === 2) {
+      alert("At least 2 options are required!");
     }
   });
 
