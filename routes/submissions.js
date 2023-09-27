@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const pollQueries = require('../db/queries/polls');
 const userQueries = require('../db/queries/users');
 const submissionQueries = require('../db/queries/submissions');
-const { generateRandomString, getChoices, insertAllChoices } = require('../public/scripts/helpers.js');
+const { getChoices } = require('../public/scripts/helpers.js');
 
 dotenv.config();
 
