@@ -30,6 +30,7 @@ Answering a poll
 Result page
 !["Result page"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Results-page.png?raw=true)
 
+</br>
 
 ## Getting Started
 
@@ -40,7 +41,6 @@ Result page
 5. Reset database: `npm run db:reset`
   - Check the db folder to see what gets created and seeded in the SDB
 7. Run the server: `npm run local`
-  - Note: nodemon is used, so you should not have to restart your server
 8. Visit `http://localhost:8080/`
 
 
