@@ -8,29 +8,32 @@ We've built an application that allows a user to create a poll and send it to th
 ## Screenshots
 
 Home page with form toggle
+
 !["Home page"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Home-page.png?raw=true)
 
 </br>
 
 Create a poll
+
 !["Create a poll"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Create-a-page.png?raw=true)
 
 </br>
 
 Link page for poll creator
+
 !["Link page"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Link-page.png?raw=true)
 
 </br>
 
 Answering a poll
+
 !["Answering a poll"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Answer-the-poll.png?raw=true)
 
 </br>
 
 Result page
-!["Result page"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Results-page.png?raw=true)
 
-</br>
+!["Result page"](https://github.com/VagrantGinger68/Lighthouse-Midterm/blob/ryan/docs/Results-page.png?raw=true)
 
 ## Getting Started
 
